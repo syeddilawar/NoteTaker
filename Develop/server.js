@@ -1,18 +1,22 @@
+
 const express = require("express");
 const app = express();
-const port = 3000;
+const notesController = require("./notesController");
 const path = require("path");
+const PORT = process.env.PORT || 8080;
+
+
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "./public")));
+
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
 
-app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-app.get("/notes", function (req, res) {
-  res.sendFile(path.join(__dirname, "./public/notes.html"));
-});
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+app.get("/", notesController.displayIndex);
+app.get("/notes", notesController.displayNotes);
+app.get("/api/notes", notesController.sendNotes);
+app.post("/api/notes", notesController.addNote);
+app.delete("/api/notes/:id", notesController.deleteNote);
+
+app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
