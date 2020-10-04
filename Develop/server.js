@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const notesController = require("./noteController");
 const path = require("path");
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 
@@ -16,4 +16,4 @@ app.get("/api/notes", notesController.sendNotes);
 app.post("/api/notes", notesController.addNote);
 app.delete("/api/notes/:id", notesController.deleteNote);
 
-app.listen(PORT, () => console.log(`Listening on PORT :::: localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Listening on PORT ::::localhost:${PORT}`));
