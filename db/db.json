@@ -1,8 +1,1 @@
-[
-  { "title": "Test Title", "text": "Test text" },
-  {
-    "title": "Note Taker App",
-    "text": "This is a node taker app which allows you to add delete and save option \n\n\nENJOY :)",
-    "id": null
-  }
-]
+[{"title":"Test Title","text":"Test text"},{"title":"Note Taker App","text":"This is a node taker app which allows you to add delete and save option \n\n\nENJOY :)","id":null}]
