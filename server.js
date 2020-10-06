@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const notesController = require("./noteController");
+const notesController = require("./notesController");
 const path = require("path");
 const PORT = process.env.PORT || 8000;
 
